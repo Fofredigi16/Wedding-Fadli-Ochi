@@ -717,6 +717,15 @@ h1 {
   color: var(--greyblack);
   line-height: 1.6;
 }
+#guestName {
+  font-family: "Merriweather", serif;
+  max-width: 320px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: var(--greyblack);
+  line-height: 1.6;
+}
 #wishForm textarea {
   height: 120px;
 }
