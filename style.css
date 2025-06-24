@@ -93,7 +93,7 @@ h1 {
 }
 .kpYt {
   font-family: "Merriweather", serif;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
   font-weight: 300;
   font-style: normal;
   font-size: 1.2rem;
@@ -104,7 +104,7 @@ h1 {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
