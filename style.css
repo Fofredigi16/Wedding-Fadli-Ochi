@@ -110,7 +110,7 @@ body {
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
-#guestName {
+#gstName {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-style: normal;
@@ -683,7 +683,6 @@ body {
   min-height: 100vh;
   padding: 2rem 1rem;
   display: flex;
-  align-content: center;
   flex-direction: column;
   text-align: center;
 }
@@ -691,15 +690,30 @@ body {
   width: 180px;
   height: 300px;
   object-fit: cover;
-  display: block;
   margin: 0 auto;
+  display: block;
+}
+.sbtxt {
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-size: 2.2rem;
+  color: var(--greyblack);
+  max-width: 310px;
+  margin-inline: auto;
+  line-height: 2;
 }
 .subtext {
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
+  font-family: "Merriweather", serif;
+  font-size: 1rem;
+  margin-bottom: 1rem;
   color: var(--greyblack);
-  max-width: 320px;
+  max-width: 310px;
   margin-inline: auto;
+  line-height: 2;
+}
+#guestName {
+  font-family: "Merriweather", serif;
+  font-size: 0.8em;
 }
 #wishForm label {
   display: block;
@@ -710,39 +724,13 @@ body {
   font-weight: 300;
   color: var(--greyblack);
 }
-.txtBest {
-  margin-bottom: 1rem;
-  font-family: "Merriweather", serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 2.5rem;
-  color: var(--greyblack);
-}
-.subtextbest {
-  font-family: "Merriweather", serif;
-  max-width: 300px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1rem;
-  color: var(--greyblack);
-  line-height: 1.6;
-}
-#gsName {
-  font-family: "Merriweather", serif;
-  max-width: 320px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 0.8rem;
-  color: var(--greyblack);
-  line-height: 1.6;
-}
 #wishForm textarea {
   height: 120px;
 }
 #wishForm input,
 #wishForm textarea {
   width: 100%;
-  max-width: 320px;
+  max-width: 310px;
   margin: 0.5rem auto;
   padding: 0.6rem;
   border-radius: 10px;
@@ -755,7 +743,7 @@ body {
   font-size: 0.8rem;
   color: gray;
   text-align: right;
-  max-width: 320px;
+  max-width: 310px;
   margin: auto;
 }
 .wisheBtn {
@@ -769,29 +757,11 @@ body {
   font-size: 1rem;
   margin-top: 1rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.wisheBtn:hover {
-  transform: scale(1.1);
-}
-.pagination {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-.pagination button {
-  background: none;
-  border: none;
-  font-family: "Merriweather", serif;
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--greyblack);
 }
 #wishContainer {
   font-family: "Merriweather", serif;
   margin-top: 2rem;
-  max-width: 320px;
+  max-width: 310px;
   margin-inline: auto;
   display: flex;
   flex-direction: column;
@@ -803,13 +773,12 @@ body {
   border-radius: 10px;
   box-shadow: var(--shadow2);
   text-align: left;
-  word-break: break-word;
-  overflow-wrap: break-word;
 }
 .wish-item strong {
   display: block;
   margin-bottom: 0.5rem;
 }
+
 #desainBy {
   background-color: var(--slateGray);
   min-height: 10vh;
