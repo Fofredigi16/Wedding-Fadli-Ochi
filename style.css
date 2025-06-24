@@ -62,6 +62,7 @@ body {
 .container {
   width: 100%;
   max-width: 480px;
+  min-height: 100vh;
   box-shadow: var(--shadow);
 }
 .section {
