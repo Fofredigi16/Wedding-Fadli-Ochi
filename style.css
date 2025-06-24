@@ -10,9 +10,6 @@
   --shadow1: 0 2px 2px rgba(0 0 0 / 0.5);
   --shadow2: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-html {
-  scroll-behavior: smooth;
-}
 * {
   margin: 0;
   padding: 0;
@@ -87,24 +84,37 @@ body {
   text-align: center;
   padding: 2rem;
 }
-h1 {
+.FaddanRos {
   font-family: "Dancing Script", cursive;
-  font-size: 3.5rem;
-  margin: 0.5rem 0;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 4rem;
+  color: var(--greyblack);
+}
+.thWeOf {
+  font-family: "Merriweather", serif;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  color: var(--greyblack);
 }
 .kpYt {
   font-family: "Merriweather", serif;
   margin-bottom: 1rem;
   font-weight: 300;
   font-style: normal;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
 #guestName {
   font-family: "Merriweather", serif;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-style: normal;
+  font-size: 1.5rem;
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
@@ -254,6 +264,7 @@ h1 {
   font-style: normal;
   font-size: 2.2rem;
   margin-top: 0.2rem;
+  margin-bottom: 1rem;
   color: var(--greyblack);
 }
 .gbText {
@@ -709,19 +720,19 @@ h1 {
 }
 .subtextbest {
   font-family: "Merriweather", serif;
-  max-width: 320px;
+  max-width: 300px;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
   color: var(--greyblack);
   line-height: 1.6;
 }
-#guestName {
+#gsName {
   font-family: "Merriweather", serif;
   max-width: 320px;
   font-style: normal;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--greyblack);
   line-height: 1.6;
 }
