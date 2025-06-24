@@ -24,82 +24,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-/* Best Wishes */
-const guestMessage = document.getElementById("guestMessage");
-const charCount = document.getElementById("charCount");
-
-const wishes = []; // untuk simpan semua pesan
-const perPage = 3;
-let currentPage = 1;
-
-guestMessage.addEventListener("input", () => {
-  charCount.textContent = `${guestMessage.value.length} / 500`;
-});
-
-document.getElementById("wishForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  const name = document.getElementById("guestName").value.trim();
-  const message = guestMessage.value.trim();
-
-  if (name && message) {
-    wishes.unshift({ name, message });
-    this.reset();
-    charCount.textContent = "0 / 500";
-    renderWishes();
-  }
-});
-
-function renderWishes() {
-  const container = document.getElementById("wishContainer");
-  container.innerHTML = "";
-  const start = (currentPage - 1) * perPage;
-  const end = start + perPage;
-  const paginated = wishes.slice(start, end);
-
-  paginated.forEach((wish) => {
-    const div = document.createElement("div");
-    div.className = "wish-item";
-    div.innerHTML = `<strong>${wish.name}</strong><p>${wish.message}</p>`;
-    container.appendChild(div);
-  });
-
-  renderPageNumbers();
-}
-
-function renderPageNumbers() {
-  const totalPages = Math.ceil(wishes.length / perPage);
-  const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
-    .map(
-      (num) =>
-        `<button onclick="goToPage(${num})" ${
-          num === currentPage ? 'style="font-weight:bold"' : ""
-        }>${num}</button>`
-    )
-    .join(" ");
-  document.getElementById("pageNumbers").innerHTML = pageNumbers;
-}
-
-function goToPage(page) {
-  currentPage = page;
-  renderWishes();
-}
-
-function nextPage() {
-  const totalPages = Math.ceil(wishes.length / perPage);
-  if (currentPage < totalPages) {
-    currentPage++;
-    renderWishes();
-  }
-}
-
-function prevPage() {
-  if (currentPage > 1) {
-    currentPage--;
-    renderWishes();
-  }
-}
-
 /* List RSVP */
 const rsvpForm = document.getElementById("rsvpForm");
 const rsvpList = document.getElementById("rsvpList");
@@ -223,10 +147,10 @@ window.addEventListener("scroll", () => {
 /* Distribusi */
 // Ambil parameter dari URL
 const urlParams = new URLSearchParams(window.location.search);
-const guest = urlParams.get("to");
+const gst = urlParams.get("to");
 
 // Tampilkan nama jika ada
-if (guest) {
-  const decodedName = decodeURIComponent(guest.replace(/\+/g, " "));
-  document.getElementById("guestName").textContent = decodedName;
+if (gst) {
+  const decodedName = decodeURIComponent(gst.replace(/\+/g, " "));
+  document.getElementById("gstName").textContent = decodedName;
 }
