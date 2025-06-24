@@ -100,7 +100,7 @@ h1 {
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
-.guestName {
+#guestName {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-style: normal;
