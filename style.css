@@ -94,7 +94,7 @@ h1 {
 }
 .kpYt {
   font-family: "Merriweather", serif;
-  margin-bottom: 1.1rem;
+  margin-bottom: 1rem;
   font-weight: 300;
   font-style: normal;
   font-size: 1.2rem;
@@ -105,7 +105,7 @@ h1 {
   font-family: "Merriweather", serif;
   font-weight: bold;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-top: 0.2rem;
   color: var(--greyblack);
 }
@@ -523,7 +523,7 @@ h1 {
 .wedGift-card {
   width: 100%;
   max-width: 350px;
-  max-height: 710px;
+  max-height: 750px;
   margin-top: 2rem;
   padding: 3rem 1rem;
   border-radius: 20px;
