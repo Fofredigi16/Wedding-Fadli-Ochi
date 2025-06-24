@@ -91,6 +91,23 @@ h1 {
   font-size: 3.5rem;
   margin: 0.5rem 0;
 }
+.kpYt {
+  font-family: "Merriweather", serif;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  color: var(--greyblack);
+}
+.guestName {
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  color: var(--greyblack);
+}
 .btn {
   margin-top: 2rem;
   padding: 0.6rem 1.1rem;
@@ -159,6 +176,8 @@ h1 {
 }
 .weltang {
   font-family: "Merriweather", serif;
+  letter-spacing: 1px;
+  word-spacing: 10px;
   margin-bottom: 1.5rem;
   font-weight: 300;
   font-style: normal;
