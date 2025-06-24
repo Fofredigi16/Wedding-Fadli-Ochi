@@ -21,7 +21,7 @@
         <h1 class="FaddanRos">&</h1>
         <h1 class="FaddanRos">Ochi</h1>
         <p class="kpYt">Kepada Yth.</p>
-        <p class="gstName"><span id="guestName">Bapak/Ibu</span></p>
+        <p class="gstName"><span id="gstName">Bapak/Ibu</span></p>
         <button id="lihatUndangan" class="btn">Lihat Undangan</button>
       </section>
 
@@ -312,17 +312,17 @@
         <!-- Best Wishes -->
         <div id="bestWishes">
           <div class="inner-wrapper">
-            <img class="imSail" src="img/sailBoat1.png" />
-            <p class="txtBest">Ucapan & Do'a</p>
-            <p class="subtextbest">
+            <img class="imSail" src="img/sailBoat.png" />
+            <p class="sbtxt">Ucapan & Do'a</p>
+            <p class="subtext">
               Harapan indah serta do'a tulus anda adalah semangat kami untuk
-              memulai bersama perjalanan baru ini :
+              memulai bersama perjalanan baru ini:
             </p>
             <form id="wishForm">
               <label for="name">Nama :</label>
               <input
                 type="text"
-                id="gsName"
+                id="guestName"
                 placeholder="Nama"
                 style="font-family: 'Merriweather', serif"
                 maxlength="30"
@@ -368,6 +368,84 @@
     </audio>
 
     <script src="script.js"></script>
+    <script>
+      const guestMessage = document.getElementById("guestMessage");
+      const charCount = document.getElementById("charCount");
+      const wishForm = document.getElementById("wishForm");
+      const wishContainer = document.getElementById("wishContainer");
+
+      let wishes = JSON.parse(localStorage.getItem("wishes")) || [];
+      const perPage = 3;
+      let currentPage = 1;
+
+      guestMessage.addEventListener("input", () => {
+        charCount.textContent = `${guestMessage.value.length} / 500`;
+      });
+
+      wishForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const name = document.getElementById("guestName").value.trim();
+        const message = guestMessage.value.trim();
+
+        if (name && message) {
+          wishes.unshift({ name, message });
+          localStorage.setItem("wishes", JSON.stringify(wishes));
+          wishForm.reset();
+          charCount.textContent = "0 / 500";
+          currentPage = 1;
+          renderWishes();
+        }
+      });
+
+      function renderWishes() {
+        wishContainer.innerHTML = "";
+        const start = (currentPage - 1) * perPage;
+        const end = start + perPage;
+        const paginated = wishes.slice(start, end);
+
+        paginated.forEach(({ name, message }) => {
+          const div = document.createElement("div");
+          div.className = "wish-item";
+          div.innerHTML = `<strong>${name}</strong><p>${message}</p>`;
+          wishContainer.appendChild(div);
+        });
+
+        renderPageNumbers();
+      }
+
+      function renderPageNumbers() {
+        const totalPages = Math.ceil(wishes.length / perPage);
+        const pageNumbers = Array.from({ length: totalPages }, (_, i) => i + 1)
+          .map(
+            (num) =>
+              `<button onclick="goToPage(${num})" ${
+                num === currentPage ? 'style="font-weight:bold"' : ""
+              }>${num}</button>`
+          )
+          .join(" ");
+        document.getElementById("pageNumbers").innerHTML = pageNumbers;
+      }
+
+      function goToPage(page) {
+        currentPage = page;
+        renderWishes();
+      }
+      function nextPage() {
+        const totalPages = Math.ceil(wishes.length / perPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderWishes();
+        }
+      }
+      function prevPage() {
+        if (currentPage > 1) {
+          currentPage--;
+          renderWishes();
+        }
+      }
+
+      renderWishes();
+    </script>
     <script src="CountDown/simplyCountdown.umd.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
